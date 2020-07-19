@@ -2,7 +2,7 @@ package com.adriell.calculator.domain;
 
 import java.io.Serializable;
 
-public class Simple implements Serializable{
+public class Juros implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -14,11 +14,11 @@ public class Simple implements Serializable{
 	private String formatoTem;
 	
 	
-	public Simple() {
+	public Juros() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Simple(double cap, double jur, double tax, 
+	public Juros(double cap, double jur, double tax, 
 			String formatoTax, double tem, String formatoTem) {
 		super();
 		this.cap = cap;
@@ -80,5 +80,5 @@ public class Simple implements Serializable{
 		
 		return builder.toString();
 	}
-	
+
 }
