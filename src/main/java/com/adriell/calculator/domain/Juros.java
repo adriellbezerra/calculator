@@ -1,6 +1,7 @@
 package com.adriell.calculator.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class Juros implements Serializable{
 
@@ -71,11 +72,13 @@ public class Juros implements Serializable{
 
 	@Override
 	public String toString() {
+		BigDecimal taxa = new BigDecimal(tax);
+		taxa = taxa.setScale(3, BigDecimal.ROUND_HALF_EVEN);
 		StringBuilder builder = new StringBuilder();
 		builder.append("Juros Simples:\n");
 		builder.append("Capital: " + cap + ", ");
 		builder.append("Juros: " + jur + ", ");
-		builder.append("Taxa: " + tax + " " + formatoTax + ", ");
+		builder.append("Taxa: " + taxa + " " + formatoTax + ", ");
 		builder.append("Tempo: " + tem + " " + formatoTem);
 		
 		return builder.toString();
