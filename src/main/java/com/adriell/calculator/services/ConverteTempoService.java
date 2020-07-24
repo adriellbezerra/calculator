@@ -5,123 +5,124 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConverteTempoService {
 
-	public double diaMes(double valorAD) {
-		return valorAD * 30;
+	public static double diaMes(double dias) {
+		return dias/30.0;
 	}
 	
-	public double diaBimestre(double valorAD) {
-		return valorAD * (30*2);
+	public static double diaBimestre(double dias) {
+		return dias/60.0;
 	}
 	
-	public double diaTrimestre(double valorAD) {
-		return valorAD * (30*3);
+	public static double diaTrimestre(double dias) {
+		return dias/90.0;
 	}
 	
-	public double diaSemestre(double valorAD) {
-		return valorAD * (30*6);
+	public static double diaSemestre(double dias) {
+		return dias/180.0;
 	}
 	
-	public double diaAno(double valorAD) {
-		return valorAD * (30*12);
+	public static double diaAno(double dias) {
+		return dias/360.0;
 	}
 	
-	public double mesDia(double valorAM) {
-		return valorAM/30;
+	public static double mesDia(double meses) {
+		return meses * 30.0;
 	}
 	
-	public double mesBimestre(double valorAM) {
-		return valorAM * 2;
+	public static double mesBimestre(double meses) {
+		return meses/2.0;
 	}
 	
-	public double mesTrimestre(double valorAM) {
-		return valorAM * 3;
+	public static double mesTrimestre(double meses) {
+		return meses/3.0;
 	}
 	
-	public double mesSemestre(double valorAM) {
-		return valorAM * 6;
+	public static double mesSemestre(double meses) {
+		return meses/6.0;
 	}
 	
-	public double mesAno(double valorAM) {
-		return valorAM * 12;
+	public static double mesAno(double meses) {
+		return meses/12.0;
 	}
 	
-	public double bimestreDia(double valorAB) {
-		return valorAB/(30*2);
+	public static double bimestreDia(double bimestres) {
+		return bimestres * 60.0;
 	}
 	
-	public double bimestreMes(double valorAB) {
-		return valorAB/(2);
+	public static double bimestreMes(double bimestres) {
+		return bimestres * 2.0;
 	}
 	
-	public double bimestreTri(double valorAB) {
-		return bimestreMes(valorAB) * 3;
+	public static double bimestreTrimestre(double bimestres) {
+		return mesTrimestre(bimestreMes(bimestres));
 	}
 	
-	public double bimestreSemestre(double valorAB) {
-		return bimestreMes(valorAB) * 6;
+	public static double bimestreSemestre(double bimestres) {
+		return mesSemestre(bimestreMes(bimestres));
 	}
 	
-	public double bimestreAno(double valorAB) {
-		return bimestreMes(valorAB) * 12;
+	public static double bimestreAno(double bimestres) {
+		return mesAno(bimestreMes(bimestres));
 	}
 	
-	public double trimestreDia(double valorAT) {
-		return valorAT/(30*3);
+	public static double trimestreDia(double trimestres) {
+		return trimestres * 90.0;
 	}
 	
-	public double trimestreMes(double valorAT) {
-		return valorAT/3;
+	public static double trimestreMes(double trimestres) {
+		return trimestres * 3.0;
 	}
 	
-	public double trimestreBimestre(double valorAT) {
-		return trimestreMes(valorAT) * 2;
+	public static double trimestreBimestre(double trimestres) {
+		return mesBimestre(trimestreMes(trimestres));
 	}
 	
-	public double trimestreSemestre(double valorAT) {
-		return valorAT * 2;
+	public static double trimestreSemestre(double trimestres) {
+		return mesSemestre(trimestreMes(trimestres));
 	}
 	
-	public double trimestreAno(double valorAT) {
-		return valorAT * 4;
+	public static double trimestreAno(double trimestres) {
+		return mesAno(trimestreMes(trimestres));
 	}
 	
-	public double semestreDia(double valorAS) {
-		return valorAS/(30*6);
+	public static double semestreDia(double semestres) {
+		return semestres * 180.0;
 	}
 	
-	public double semestreMes(double valorAS) {
-		return valorAS/6;
+	public static double semestreMes(double semestres) {
+		return semestres * 6.0;
 	}
 	
-	public double semestreBimestre(double valorAS) {
-		return valorAS/3;
+	public static double semestreBimestre(double semestres) {
+		return semestres * 3.0;
 	}
 	
-	public double semestreTrimestre(double valorAS) {
-		return valorAS/2;
+	public static double semestreTrimestre(double semestres) {
+		return semestres * 2.0;
 	}
 	
-	public double semestreAno(double valorAS) {
-		return valorAS * 2;
+	public static double semestreAno(double semestres) {
+		return mesAno(semestreMes(semestres));
 	}
 	
-	public double anoDia(double valorAA) {
-		return valorAA/(30 * 12);
+	public static double anoDia(double anos) {
+		return anos * 360;
 	}
 	
-	public double anoMes(double valorAA) {
-		return valorAA/12;
+	public static double anoMes(double anos) {
+		return anos * 12;
 	}
 	
-	public double anoBimestre(double valorAA) {
-		return valorAA/6;
+	public static double anoBimestre(double anos) {
+		return anos * 6;
 	}
 	
-	public double anoTrimestre(double valorAA) {
-		return valorAA/4;
+	public static double anoTrimestre(double anos) {
+		return anos * 4;
 	}
 	
-	public double anoSemestre(double valorAA) {
-		return valorAA/2;
+	public static double anoSemestre(double anos) {
+		return anos * 2;
 	}
+	
 }
